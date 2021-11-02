@@ -48,6 +48,7 @@
         document.addEventListener('mousemove', resetIdleTime, false);
         document.addEventListener('keypress', resetIdleTime, false);
         document.addEventListener('scroll', resetIdleTime, false);
+        document.addEventListener('click', resetIdleTime, false);
 
         function resetIdleTime() {
             idleTime = 0
@@ -102,10 +103,6 @@
             document.getElementById('timer').innerHTML = m + ":" + s;
             setTimeout(startTimer, 1000);
             console.log("s", s);
-            let m_data = {
-                "sec": s
-            }
-            show_data(m_data);
         }
 
         function checkSecond(sec) {
@@ -118,10 +115,8 @@
             return sec;
         }
 
-        function show_data(data) {
-            function clearAll() {
-                clearTimeout(data.sec);
-            }
+        function clearAll() {
+            timerCount()
         }
     </script>
 </body>
